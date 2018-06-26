@@ -9,3 +9,4 @@ RUN apt-get update \
 ARG CHAINER_VERSION
 RUN mkdir -p /opt/chainer
 RUN curl -sSfL https://raw.githubusercontent.com/chainer/chainer/v${CHAINER_VERSION}/examples/mnist/train_mnist.py > /opt/chainer/train_mnist.py
+RUN python -c "from chainer.datasets import get_mnist; get_mnist()"
